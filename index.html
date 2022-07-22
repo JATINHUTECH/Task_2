@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+  <!-- title and description -->
+  <meta name="description" content="Book Management" />
+  <title>Book Management</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/header.css">
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+
+    body,
+    html {
+      overflow-x: hidden;
+
+    }
+
+    header {
+      width: 100%;
+      height: 100vh;
+      background-image: url('./blog-5.jpg');
+      background-size: cover;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header {
+      margin-bottom: 150px;
+      color: white;
+      text-align: center;
+    }
+
+    .header h2 {
+      font-size: 10vmin;
+      font-style: italic;
+    }
+
+    .line {
+      width: 150px;
+      height: 4px;
+      background-color: red;
+      margin: 10px auto;
+
+    }
+
+    .btn {
+      padding: 8px 15px;
+      background-color: rgb(104, 165, 42);
+      border-radius: 10px;
+      color: whitesmoke;
+      margin: 0 10px;
+    }
+
+    .btn:hover {
+      background: rgb(93, 191, 84);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- overall container for layout -->
+  <div class="container" >
+    <!-- .header-main -->
+
+    <nav class="navbar" id="myNavbar"  >  
+
+      <ul class="nav-link" >
+        <a href="index.html" class="nav-text">Home</a>
+        <a href="gallery.html" class="nav-text">Gallery</a>
+        <a href="admin.html" class="nav-text">Admin Login</a>
+        <a href="register.html" class="nav-text">Register</a>
+        <a href="contact.html" class="nav-text">Contact</a>
+        <a href="javascript:void(0);" style="font-size:15px; color: aliceblue; " class="icon" onclick="myFunction()">
+          &#x2630;</a>
+
+      </ul>
+
+    </nav>
+
+    <header>
+      <div class="header">
+        <h2>
+          Book Management System
+        </h2>
+        <div class="line"></div>
+
+        <div class="button">
+
+          <button onclick="return modal()" class="btn" type="button">About Us </button>
+
+          <button class="btn" type="button" onclick="window.location.href='bookavailable.html'">Book available</button>
+
+        </div>
+
+      </div>
+    </header>
+
+    <!-- The Modal -->
+    <div id="myForm" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+
+        <button onclick="return exit()" class="close">&#10060;</button>
+
+        <p>‘Book Management System’ is complete solution for any kind of library maintenance. Specially for Mobile
+          library. This CMS Includes almost everything needed in a library. Multiple categories for single book, Book
+          issue system for library members, Messaging inside the members etc. We made this fully responsive so that
+          every device can get an access. We use Codeigniter as a framework. It`s the most popular framework of php
+          around the world.</p>
+      </div>
+
+    </div>
+
+
+
+    <!-- .footer-main -->
+
+    <section class="footer">
+      <p> 123 Avenue , New York </p>
+      <p>Copyright @ 2020 </p>
+
+    </section>
+
+
+
+  </div>
+</body>
+
+<script>
+
+  function modal() {
+    console.log("hi")
+
+    document.getElementById("myForm").style.display = "block";
+    return false;
+  }
+
+  function exit() {
+    console.log("bye")
+    document.getElementById("myForm").style.display = "none";
+    return false;
+
+  }
+
+  function myFunction() {
+    let dropdown = document.getElementById("myNavbar");
+    console.log("hye")
+    
+    if (dropdown.className === "navbar") {
+      dropdown.className += " responsive";
+    } else {
+      dropdown.className = "navbar";
+    }
+  }
+
+ 
+</script>
+
+</html>
